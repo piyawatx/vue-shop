@@ -21,7 +21,7 @@
         <div class="container-fluid">
           <div class="input-group">
             <input type="text" class="form-control" placeholder="ค้นหาสินค้า" />
-            <span class="input-group-text">Search</span>
+            <span class="input-group-text"><font-awesome-icon icon="fa-solid fa-magnifying-glass" class="fs-4 text-dark"/></span>
           </div>
         </div>
       </div>
