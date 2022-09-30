@@ -17,13 +17,13 @@
             <img
               src="../assets/logo.png"
               width="40"
-              class="align-self-center"
+              class="align-self-end"
             />
-            <span class="fs-3 ms-1 align-self-center"> Vue Shop </span>
+            <span class="fs-3 ms-1 align-self-end"> Vue Shop </span>
           </a>
         </div>
 
-        <div class="container-fluid align-self-center p-0 me-4">
+        <div class="container-fluid align-self-end p-0 me-4">
           <div class="input-group">
             <input type="text" class="form-control" placeholder="ค้นหาสินค้า" />
             <span class="input-group-text">
@@ -34,7 +34,7 @@
             </span>
           </div>
         </div>
-        <div class="align-self-center">
+        <div class="align-self-end">
           <font-awesome-icon icon="fa-solid fa-cart-shopping" class="fs-3" />
         </div>
       </div>
