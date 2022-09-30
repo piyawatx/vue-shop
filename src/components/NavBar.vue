@@ -12,13 +12,16 @@
         </ul>
       </div>
       <div class="d-flex">
-        <a class="navbar-brand d-flex" href="#">
+        <div class="d-none d-sm-block me-5">
+          <a class="navbar-brand d-flex" href="#">
           <img src="../assets/logo.png" width="40" class="align-self-center" />
-          <span class="fs-3 ms-1 align-self-center d-none d-sm-block me-5">
+          <span class="fs-3 ms-1 align-self-center">
             Vue Shop
           </span>
         </a>
-        <div class="container-fluid">
+        </div>
+        
+        <div class="container-fluid align-self-center p-0 me-4">
           <div class="input-group">
             <input type="text" class="form-control" placeholder="ค้นหาสินค้า" />
             <span class="input-group-text">
@@ -28,6 +31,9 @@
               />
             </span>
           </div>
+        </div>
+        <div class="align-self-center">
+          <font-awesome-icon icon="fa-solid fa-cart-shopping" class="fs-3" />
         </div>
       </div>
     </div>
