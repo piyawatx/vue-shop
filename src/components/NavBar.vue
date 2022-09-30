@@ -13,15 +13,20 @@
       </div>
       <div class="d-flex">
         <a class="navbar-brand d-flex" href="#">
-          <img src="../assets/logo.png" alt="" width="40" /><span
-            class="fs-3 ms-1 d-none d-sm-block me-5"
-            >Vue Shop</span
-          >
+          <img src="../assets/logo.png" width="40" class="align-self-center" />
+          <span class="fs-3 ms-1 align-self-center d-none d-sm-block me-5">
+            Vue Shop
+          </span>
         </a>
         <div class="container-fluid">
           <div class="input-group">
             <input type="text" class="form-control" placeholder="ค้นหาสินค้า" />
-            <span class="input-group-text"><font-awesome-icon icon="fa-solid fa-magnifying-glass" class="fs-4 text-dark"/></span>
+            <span class="input-group-text">
+              <font-awesome-icon
+                icon="fa-solid fa-magnifying-glass"
+                class="fs-4 text-dark"
+              />
+            </span>
           </div>
         </div>
       </div>
