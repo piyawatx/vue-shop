@@ -11,8 +11,9 @@ import {
   faUserSecret,
   faMagnifyingGlass,
   faCartShopping,
+  faListUl,
 } from "@fortawesome/free-solid-svg-icons";
-library.add(faUserSecret, faMagnifyingGlass, faCartShopping);
+library.add(faUserSecret, faMagnifyingGlass, faCartShopping, faListUl);
 
 createApp(App)
   .use(store)

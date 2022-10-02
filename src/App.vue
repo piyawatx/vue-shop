@@ -3,16 +3,18 @@
     <router-link to="/">Home</router-link> |
     <router-link to="/about">About</router-link>
   </nav> -->
-  <NavBar/>
-  <router-view/>
+  <div class="container-fluid p-0 min-vh-100 bg-light">
+    <NavBar />
+    <router-view />
+  </div>
 </template>
 <script>
-import NavBar from '../src/components/NavBar.vue'
+import NavBar from "../src/components/NavBar.vue";
 export default {
   components: {
-    NavBar
-  }
-}
+    NavBar,
+  },
+};
 </script>
 <style>
 /* #app {
@@ -21,18 +23,5 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-}
-
-nav {
-  padding: 30px;
-}
-
-nav a {
-  font-weight: bold;
-  color: #2c3e50;
-}
-
-nav a.router-link-exact-active {
-  color: #42b983;
 } */
 </style>
