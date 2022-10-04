@@ -13,16 +13,11 @@
       </div>
       <div class="d-flex">
         <div class="d-none d-sm-block me-5">
-          <a class="navbar-brand d-flex" href="#">
-            <img
-              src="../assets/logo.png"
-              width="40"
-              class="align-self-end"
-            />
+          <router-link to="/" class="navbar-brand d-flex">
+            <img src="../assets/logo.png" width="40" class="align-self-end" />
             <span class="fs-3 ms-1 align-self-end"> Vue Shop </span>
-          </a>
+          </router-link>
         </div>
-
         <div class="container-fluid align-self-end p-0 me-4">
           <div class="input-group">
             <input type="text" class="form-control" placeholder="ค้นหาสินค้า" />
