@@ -21,6 +21,9 @@
 <script>
 import ProductCard from "../components/ProductCard";
 export default {
+  created() {
+    this.$store.dispatch('fetchProducts')
+  },
   components: {
     ProductCard,
   },
