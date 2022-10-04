@@ -1,21 +1,29 @@
 <template>
   <div class="card">
     <img
-      src="https://cf.shopee.co.th/file/068aa5d59cceebfc9111a637d0d60546_tn"
+      :src="imageUrl"
       class="card-img-top"
       alt="..."
     />
     <div class="card-body p-2">
       <p class="card-text">
-        Some quick example text to build on the cccc cccccc ccc ccccc
+        {{title}}
       </p>
-      <div>฿1,200</div>
+      <div>฿{{price}}</div>
     </div>
   </div>
 </template>
 
 <script>
-export default {};
+export default {
+  props: {
+    title: String,
+    detail: String,
+    price: Number,
+    stock: Number,
+    imageUrl: String,
+  },
+};
 </script>
 
 <style scoped>
