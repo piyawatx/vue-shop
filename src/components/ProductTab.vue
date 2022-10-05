@@ -1,12 +1,15 @@
 <template>
   <div class="product-tab">
-    <div><font-awesome-icon icon="fa-solid fa-list-ul" /> หมวดหมู่</div>
-    <hr />
     <div>
-      <div>xxxxx</div>
-      <div>xxxxx</div>
-      <div>xxxxx</div>
-      <div>xxxxx</div>
+      <font-awesome-icon icon="fa-solid fa-list-ul" />
+      <span class="h5"> หมวดหมู่</span>
+    </div>
+    <hr class="text-muted" />
+    <div>
+      <div>สินค้าทั้งหมด</div>
+      <div>เสื้อ</div>
+      <div>กางเกง</div>
+      <div>รองเท้า</div>
     </div>
   </div>
 </template>
