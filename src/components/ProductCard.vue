@@ -1,5 +1,5 @@
 <template>
-  <div class="card" @click="clickProduct(id)">
+  <div class="card h-100" @click="clickProduct(id)">
     <img :src="imageUrl" class="card-img-top" alt="..." />
     <div class="card-body p-2">
       <p class="card-text">
