@@ -7,6 +7,7 @@
         :key="product.id"
       >
         <ProductCard
+          :id="product.id"
           :title="product.title"
           :detail="product.detail"
           :price="product.price"
@@ -22,7 +23,7 @@
 import ProductCard from "../components/ProductCard";
 export default {
   created() {
-    this.$store.dispatch('fetchProducts')
+    this.$store.dispatch("fetchProducts");
   },
   components: {
     ProductCard,
