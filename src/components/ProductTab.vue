@@ -6,16 +6,22 @@
     </div>
     <hr class="text-muted" />
     <div>
-      <div>สินค้าทั้งหมด</div>
-      <div>เสื้อ</div>
-      <div>กางเกง</div>
-      <div>รองเท้า</div>
+      <div @click="selectCategory()">สินค้าทั้งหมด</div>
+      <div @click="selectCategory(1)">เสื้อ</div>
+      <div @click="selectCategory(2)">กางเกง</div>
+      <div @click="selectCategory(3)">รองเท้า</div>
     </div>
   </div>
 </template>
 
 <script>
-export default {};
+export default {
+  methods: {
+    selectCategory(categoryId) {
+      this.$store.dispatch("fillterProductsByCategory", categoryId);
+    },
+  },
+};
 </script>
 
 <style scoped>
