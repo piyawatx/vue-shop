@@ -6,10 +6,12 @@
     </div>
     <hr class="text-muted" />
     <div>
-      <div @click="selectCategory()">สินค้าทั้งหมด</div>
-      <div @click="selectCategory(1)">เสื้อ</div>
-      <div @click="selectCategory(2)">กางเกง</div>
-      <div @click="selectCategory(3)">รองเท้า</div>
+      <div class="user-select-none" @click="selectCategory()">
+        สินค้าทั้งหมด
+      </div>
+      <div class="user-select-none" @click="selectCategory(1)">เสื้อ</div>
+      <div class="user-select-none" @click="selectCategory(2)">กางเกง</div>
+      <div class="user-select-none" @click="selectCategory(3)">รองเท้า</div>
     </div>
   </div>
 </template>
