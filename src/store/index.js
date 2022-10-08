@@ -3,15 +3,22 @@ import axios from "axios";
 export default createStore({
   state: {
     products: [],
+    carts: [],
   },
   getters: {
     getProducts(state) {
       return state.products;
     },
+    getCarts(state) {
+      return state.carts;
+    },
   },
   mutations: {
     setProducts(state, data) {
       state.products = data;
+    },
+    addCart(state, data) {
+      state.carts.push(data);
     },
   },
   actions: {
@@ -46,6 +53,9 @@ export default createStore({
 
           context.commit("setProducts", data);
         });
+    },
+    addCart(context, product) {
+      context.commit("addCart", product);
     },
   },
   modules: {},

@@ -11,9 +11,15 @@
         <div>
           <div class="title mb-2 fs-4 lh-1">{{ product.title }}</div>
           <div class="price mb-2 fs-2">฿{{ product.price }}</div>
-          <div class="stock mb-2 text-muted">มีสินค้าทั้งหมด {{ product.stock }} ชิ้น</div>
+          <div class="stock mb-2 text-muted">
+            มีสินค้าทั้งหมด {{ product.stock }} ชิ้น
+          </div>
           <div>
-            <button type="button" class="btn btn-outline-dark me-3">
+            <button
+              type="button"
+              class="btn btn-outline-dark me-3"
+              @click="addCart(product)"
+            >
               เพิ่มไปยังรถเข็น
             </button>
             <button type="button" class="btn btn-dark">ซื้อสินค้า</button>
@@ -56,19 +62,21 @@ export default {
             ".json"
         )
         .then((res) => {
-          console.log(res.data);
           this.product = res.data;
         });
+    },
+    addCart(product) {
+      this.$store.dispatch("addCart", product);
     },
   },
 };
 </script>
 
 <style scoped>
-img{
+img {
   width: 100%;
 }
-.title{
+.title {
   font-size: 1em;
 }
 </style>

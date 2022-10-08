@@ -31,7 +31,21 @@
         </div>
         <div class="align-self-end">
           <font-awesome-icon icon="fa-solid fa-cart-shopping" class="fs-3" />
+          <span
+            class="
+              position-absolute
+              translate-middle
+              badge
+              rounded-pill
+              border border-dark
+              bg-danger
+            "
+            v-if="$store.getters.getCarts.length > 0"
+          >
+            {{ $store.getters.getCarts.length }}
+          </span>
         </div>
+
       </div>
     </div>
   </div>
@@ -39,6 +53,12 @@
 <script>
 export default {
   name: "NavBar",
+  data() {
+    return {
+      cart: [],
+    };
+  },
+  created() {},
 };
 </script>
 <style scoped>
