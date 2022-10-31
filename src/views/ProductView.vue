@@ -3,7 +3,7 @@
     <!-- <h1>Product</h1>
     {{ $route.params.id }} -->
 
-    <div class="card card-body mt-3">
+    <div class="card card-body mt-3 border-0 shadow-sm">
       <div class="d-md-flex d-grid gap-3">
         <div class="image text-center">
           <img :src="product.imageUrl" alt="" />
@@ -28,7 +28,7 @@
       </div>
     </div>
 
-    <div class="card card-body mt-3">
+    <div class="card card-body mt-3 border-0 shadow-sm">
       <div><h5>รายละเอียดสินค้า</h5></div>
       <div>{{ product.detail }}</div>
     </div>
