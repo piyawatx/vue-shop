@@ -1,10 +1,10 @@
 <template>
   <div class="card h-100 border-0 shadow-sm" @click="clickProduct(id)">
     <img :src="imageUrl" class="card-img-top" alt="..." />
-    <div class="card-body p-2">
-      <p class="card-text">
+    <div class="d-flex flex-column justify-content-between p-2 h-100">
+      <div class="card-text">
         {{ title }}
-      </p>
+      </div>
       <div>฿{{ price }}</div>
     </div>
   </div>
@@ -21,10 +21,10 @@ export default {
     imageUrl: String,
   },
   methods: {
-    clickProduct(id){
+    clickProduct(id) {
       console.log(id);
-      this.$router.push('/product/'+id)
-    }
+      this.$router.push("/product/" + id);
+    },
   },
 };
 </script>
