@@ -20,11 +20,12 @@
               rows="2"
               id="detail"
               name="text"
+              v-model.trim="product.detail"
             ></textarea>
           </div>
           <div class="mb-2">
             <label for="category" class="form-label">category</label>
-            <select class="form-select">
+            <select class="form-select" v-model="product.category">
               <option selected>ประเภทสินค้า</option>
               <option value="1">เสื้อ</option>
               <option value="2">กางเกง</option>
@@ -71,7 +72,24 @@
 </template>
 
 <script>
-// import axios from 'axios'
+import axios from "axios";
+import Swal from "sweetalert2";
+
+import { initializeApp } from "firebase/app";
+import { getStorage, ref, uploadBytes, getDownloadURL } from "firebase/storage";
+const firebaseConfig = {
+  apiKey: "AIzaSyAgYYwezARLGeVRa1jEvfGLarpCJ460IFw",
+  authDomain: "vue-shop-5f2cd.firebaseapp.com",
+  databaseURL:
+    "https://vue-shop-5f2cd-default-rtdb.asia-southeast1.firebasedatabase.app",
+  projectId: "vue-shop-5f2cd",
+  storageBucket: "vue-shop-5f2cd.appspot.com",
+  messagingSenderId: "539817594589",
+  appId: "1:539817594589:web:514f26a8dae8cecaad5534",
+  measurementId: "G-1GZLGX47YK",
+};
+const app = initializeApp(firebaseConfig, "nuxt-shop");
+const storage = getStorage(app);
 
 export default {
   data() {
@@ -85,9 +103,47 @@ export default {
         imageUrl: "",
       },
       file: null,
+      newImageName: null,
     };
   },
   methods: {
+    async saveData() {
+      if (this.validate()) {
+        await this.uploadImage();
+        await this.getImageUrl();
+        await this.createProduct();
+        this.resetForm();
+        this.$router.push("/stock/");
+      } else {
+        alert("ข้อมูลไม่ครบ");
+      }
+    },
+    resetForm() {
+      this.product.title = "";
+      this.product.detail = "";
+      this.product.price = "";
+      this.product.stock = "";
+      this.product.category = "";
+      this.product.imageUrl = "";
+    },
+    validate() {
+        console.log(this.product);
+      if (!this.product.title) {
+        return false;
+      } else if (!this.product.detail) {
+        return false;
+      } else if (!this.product.price) {
+        return false;
+      } else if (!this.product.stock) {
+        return false;
+      } else if (!this.product.category) {
+        return false;
+      } else if (!this.product.imageUrl) {
+        return false;
+      } else {
+        return true;
+      }
+    },
     onFileSelected(event) {
       if (event.target.files[0]) {
         this.file = event.target.files[0];
@@ -95,6 +151,33 @@ export default {
       } else {
         this.product.imageUrl = null;
       }
+    },
+    async uploadImage() {
+      const imageRef = ref(storage, "img" + this.file.lastModified);
+      await uploadBytes(imageRef, this.file).then((res) => {
+        this.newImageName = res.metadata.name;
+      });
+    },
+    async getImageUrl() {
+      await getDownloadURL(ref(storage, this.newImageName)).then((url) => {
+        this.product.imageUrl = url;
+      });
+    },
+    async createProduct() {
+      await axios
+        .post(
+          "https://vue-shop-5f2cd-default-rtdb.asia-southeast1.firebasedatabase.app/products.json",
+          this.product
+        )
+        .then((res) => {
+          console.log(res);
+          Swal.fire({
+            icon: "success",
+            title: "Saved",
+            showConfirmButton: false,
+            timer: 1500,
+          });
+        });
     },
   },
 };
