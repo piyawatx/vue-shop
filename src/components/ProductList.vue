@@ -1,6 +1,6 @@
 <template>
   <div class="product-list">
-    <div class="row g-1 row-cols-2 row-cols-sm-2 row-cols-md-4 row-cols-lg-5">
+    <div class="row g-2 row-cols-2 row-cols-sm-2 row-cols-md-4 row-cols-lg-5">
       <div
         class="col"
         v-for="product in $store.getters.getProducts"
