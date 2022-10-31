@@ -4,10 +4,12 @@
       <h1>Stock</h1>
 
       <div class="d-flex align-items-center">
-        <button type="button" class="btn btn-success">Add</button>
+        <button type="button" class="btn btn-success" @click="addProduct">
+          New Product
+        </button>
       </div>
     </div>
-    <div class="card card-body shadow-sm p-0">
+    <div class="card card-body border-0 shadow-sm p-0">
       <div class="table-responsive">
         <table class="table table-hover table-borderless table-striped m-0">
           <thead>
@@ -15,7 +17,7 @@
               <th style="min-width: 300px">Title</th>
               <th style="width: 200px; min-width: 100px">Price</th>
               <th>Stock</th>
-              <th style="width: 130px; min-width: 120px">Actions</th>
+              <th class="text-center" style="width: 130px; min-width: 120px">Actions</th>
             </tr>
           </thead>
           <tbody>
@@ -28,12 +30,14 @@
               <td>{{ product.price.toLocaleString() }}</td>
               <td>{{ product.stock }}</td>
               <td>
-                <button type="button" class="btn btn-sm btn-primary me-2">
-                  Edit
-                </button>
-                <button type="button" class="btn btn-sm btn-danger">
-                  Delete
-                </button>
+                <div class="d-flex justify-content-end">
+                  <button type="button" class="btn btn-sm btn-primary me-2">
+                    Edit
+                  </button>
+                  <button type="button" class="btn btn-sm btn-danger">
+                    Delete
+                  </button>
+                </div>
               </td>
             </tr>
           </tbody>
@@ -47,6 +51,11 @@
 export default {
   created() {
     this.$store.dispatch("fetchProducts");
+  },
+  methods: {
+    addProduct() {
+      this.$router.push("/stock/add");
+    },
   },
 };
 </script>
