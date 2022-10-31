@@ -37,4 +37,8 @@ export default {
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
 }
+img {
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+}
 </style>
