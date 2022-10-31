@@ -2,7 +2,7 @@
   <div class="card h-100 border-0 shadow-sm" @click="clickProduct(id)">
     <img :src="imageUrl" class="card-img-top" alt="..." />
     <div class="d-flex flex-column justify-content-between p-2 h-100">
-      <div class="card-text">
+      <div class="card-text mb-1">
         {{ title }}
       </div>
       <div>฿{{ price.toLocaleString() }}</div>
