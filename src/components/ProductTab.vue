@@ -6,12 +6,30 @@
     </div>
     <hr class="text-muted" />
     <div>
-      <div class="user-select-none" role="button" @click="selectCategory()">
-        สินค้าทั้งหมด
-      </div>
-      <div class="user-select-none" role="button" @click="selectCategory(1)">เสื้อ</div>
-      <div class="user-select-none" role="button" @click="selectCategory(2)">กางเกง</div>
-      <div class="user-select-none" role="button" @click="selectCategory(3)">รองเท้า</div>
+      <nav class="navbar p-0">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <div class="nav-link" role="button" @click="selectCategory()">
+              สินค้าทั้งหมด
+            </div>
+          </li>
+          <li class="nav-item">
+            <div class="nav-link" role="button" @click="selectCategory(1)">
+              เสื้อ
+            </div>
+          </li>
+          <li class="nav-item">
+            <div class="nav-link" role="button" @click="selectCategory(2)">
+              กางเกง
+            </div>
+          </li>
+          <li class="nav-item">
+            <div class="nav-link" role="button" @click="selectCategory(3)">
+              รองเท้า
+            </div>
+          </li>
+        </ul>
+      </nav>
     </div>
   </div>
 </template>
