@@ -1,5 +1,5 @@
 <template>
-  <div class="container">
+  <div class="container" v-if="product.title">
     <!-- <h1>Product</h1>
     {{ $route.params.id }} -->
 
