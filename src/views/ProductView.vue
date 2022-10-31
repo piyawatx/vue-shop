@@ -74,9 +74,12 @@ export default {
 
 <style scoped>
 img {
-  width: 100%;
+  aspect-ratio: 1 / 1;
+  width: 320px;
+  object-fit: cover;
 }
 .title {
   font-size: 1em;
 }
+
 </style>
