@@ -15,6 +15,7 @@
           <thead>
             <tr>
               <th style="min-width: 300px">Title</th>
+              <th>Category</th>
               <th style="width: 200px; min-width: 100px">Price</th>
               <th>Stock</th>
               <th class="text-center" style="width: 130px; min-width: 120px">
@@ -29,6 +30,7 @@
                   product.title
                 }}
               </td>
+              <td>{{ product.category}}</td>
               <td>{{ product.price.toLocaleString() }}</td>
               <td>{{ product.stock }}</td>
               <td>
@@ -54,8 +56,8 @@
 </template>
 
 <script>
-import axios from 'axios'
-import Swal from 'sweetalert2'
+import axios from "axios";
+import Swal from "sweetalert2";
 export default {
   created() {
     this.$store.dispatch("fetchProducts");
@@ -66,34 +68,34 @@ export default {
     },
     confirmDelete(id) {
       Swal.fire({
-        title: 'Are you sure?',
-        icon: 'warning',
+        title: "Are you sure?",
+        icon: "warning",
         showCancelButton: true,
-        confirmButtonColor: '#3085d6',
-        cancelButtonColor: '#d33',
-        confirmButtonText: 'Delete',
+        confirmButtonColor: "#3085d6",
+        cancelButtonColor: "#d33",
+        confirmButtonText: "Delete",
       }).then((result) => {
         if (result.isConfirmed) {
-          this.deleteProduct(id)
+          this.deleteProduct(id);
         }
-      })
+      });
     },
     async deleteProduct(id) {
       await axios
         .delete(
-          'https://vue-shop-5f2cd-default-rtdb.asia-southeast1.firebasedatabase.app/products/' +
+          "https://vue-shop-5f2cd-default-rtdb.asia-southeast1.firebasedatabase.app/products/" +
             id +
-            '.json'
+            ".json"
         )
         .then(() => {
-          this.$store.dispatch('fetchProducts')
+          this.$store.dispatch("fetchProducts");
           Swal.fire({
-            icon: 'success',
-            title: 'Deleted!',
+            icon: "success",
+            title: "Deleted!",
             showConfirmButton: false,
             timer: 1500,
-          })
-        })
+          });
+        });
     },
   },
 };
