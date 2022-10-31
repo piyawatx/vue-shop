@@ -5,7 +5,7 @@
       <div class="card-text">
         {{ title }}
       </div>
-      <div>฿{{ price }}</div>
+      <div>฿{{ price.toLocaleString() }}</div>
     </div>
   </div>
 </template>

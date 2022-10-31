@@ -10,7 +10,7 @@
         </div>
         <div>
           <div class="title mb-2 fs-4 lh-1">{{ product.title }}</div>
-          <div class="price mb-2 fs-2">฿{{ product.price }}</div>
+          <div class="price mb-2 fs-2">฿{{ product.price.toLocaleString() }}</div>
           <div class="stock mb-2 text-muted">
             มีสินค้าทั้งหมด {{ product.stock }} ชิ้น
           </div>
